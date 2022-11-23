@@ -31,7 +31,8 @@ const travel = (travelLatitude, travelLongitude, locationName) => {
 
       // Tweet image
       const canvasImage = canvas.toDataURL().replace(/^data:image\/png;base64,/, "")
-      sendTweet(canvasImage, locationName, getTweetNumber())
+      // sendTweet(canvasImage, locationName, getTweetNumber())
+      sendTweet(canvasImage, locationName)
 
       // save canvas image
       //const buffer = canvas.toBuffer('image/png')
@@ -108,7 +109,7 @@ const wander = () => {
 
 // ----- TWITTER FUNCTIONS ----- //
 
-const sendTweet = (image, locationName, newNumber) => {
+const sendTweet = (image, locationName) => {
   T.post( "media/upload", { media_data: image }, (error, data, response) => {
       if (error) {
         console.error(error);
@@ -129,17 +130,17 @@ Wandering # ${newNumber}`,
     });
 };
 
-const getTweetNumber = () => {
-  let newNumber;
-  T.get("statuses/user_timeline", { screen_name: "theWandererBot", count: 1 }, (err, data, response) => {
-    if (!err) {
-    const parse = parseInt(data[0].text.match( /\d+/g ));
-    newNumber = isNaN(parse) ? 1 : parse + 1;
-    // return tweet number
-    return newNumber;
-  }
-  });
-};
+// const getTweetNumber = () => {
+//   let newNumber;
+//   T.get("statuses/user_timeline", { screen_name: "theWandererBot", count: 1 }, (err, data, response) => {
+//     if (!err) {
+//     const parse = parseInt(data[0].text.match( /\d+/g ));
+//     newNumber = isNaN(parse) ? 1 : parse + 1;
+//     // return tweet number
+//     return newNumber;
+//   }
+//   });
+// };
 
 
 wander();
