@@ -131,7 +131,7 @@ Wandering # ${newNumber}`,
 
 const getTweetNumber = () => {
   let newNumber;
-  T.get("statuses/user_timeline", { screen_name: "WandererBot", count: 1 }, (err, data, response) => {
+  T.get("statuses/user_timeline", { screen_name: "theWandererBot", count: 1 }, (err, data, response) => {
     if (!err) {
     const parse = parseInt(data[0].text.match( /\d+/g ));
     newNumber = isNaN(parse) ? 1 : parse + 1;
