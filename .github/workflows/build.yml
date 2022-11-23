@@ -1,0 +1,25 @@
+name: tweet
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # Runs Bot at 13:00 UTC every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+      - name: Twitter Bot Action
+        uses: dephraiim/twitter-bot-action@v1.2.1
+        env:
+          MAPS_KEY: ${{ secrets.MAPS_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        with:
+         file_name: 'wanderer.js'
