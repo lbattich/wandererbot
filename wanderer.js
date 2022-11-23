@@ -115,8 +115,8 @@ const sendTweet = (image, locationName) => {
         console.error(error);
       }
       const params = {
-        status: `Wanderer above ${locationName}
-Wandering # ${newNumber}`,
+        status: `Wanderer above ${locationName}`,
+// Wandering # ${newNumber}`,
         media_ids: data.media_id_string,
       };
 
