@@ -1,6 +1,7 @@
 name: tweet
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 13 * * *' # Runs Bot at 13:00 UTC every day
 
@@ -8,11 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+        uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: 16
       - name: Twitter Bot Action
         uses: dephraiim/twitter-bot-action@v1.2.1
         env:
