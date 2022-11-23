@@ -11,7 +11,7 @@ module.exports = {
     consumer_secret : process.env.API_SECRET_KEY,
     access_token : process.env.ACCESS_TOKEN,
     access_token_secret : process.env.ACCESS_TOKEN_SECRET,
-    bearer_token : process.env.BEARER_TOKEN
+    //bearer_token : process.env.BEARER_TOKEN
 
 }
 // module.exports = {
