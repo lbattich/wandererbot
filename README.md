@@ -1,6 +1,6 @@
 # Wanderer Bot 🤖🎨
 
-[@theWandererBot](https://twitter.com/theWandererBot) is a Twitter bot that tweets new generative art image every day, showing Caspar David Friedrich's [romantic wanderer](https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog) in a location chosen at random across the whole world, pictured with Google StreetView images.
+[@theWandererBot](https://twitter.com/theWandererBot) is a Twitter bot that tweets a new generative art image every day, showing Caspar David Friedrich's [romantic wanderer](https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog) in a location chosen at random across the whole world, pictured with Google StreetView images.
 
 Let the WandererBot take you on a contemplative journey through the world, transforming any and every location into a **sublime** experience.
 
@@ -19,4 +19,4 @@ Run `node wanderer.js` to send a tweet.
 
 -----
 
-bot by [Lucas Battich](lucasbattich.com)
+bot by [Lucas Battich](https://lucasbattich.com)
